@@ -1,5 +1,28 @@
 # PinnZoo
 
+## Quick Start For g7_openarm
+
+This branch includes the `g7_openarm` floating-base dual-arm mobile manipulator model used by the companion OCS2 fork:
+
+- OCS2 fork: `https://github.com/ethanCSL/ocs2_ros2.git`
+- launch entrypoint: `g5_openarm_ros g5_openarm_pinnzoo.launch.py`
+
+Build only the shared library needed by that workflow:
+
+```
+cd PinnZoo
+mkdir -p build
+cd build
+cmake ..
+cmake --build . --target g7_openarm_quat
+```
+
+Then export:
+
+```
+export PINNZOO_LIBRARY_PATH=<path-to-PinnZoo>/build/libg7_openarm_quat.so
+```
+
 PinnZoo contains fast dependency-free C code for dynamics and kinematics functions for various robots (defined by URDFs) generated using Pinocchio and CasADI, along with a wrapper to generate a shared library and call the code from Julia. 
 Functions and supported models are listed in the documentation for the Julia package [here](https://rexlab.ri.cmu.edu/PinnZoo/build/index.html). Some of the Julia code is now compatible with ForwardDiff.jl!
 
