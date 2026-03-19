@@ -90,6 +90,8 @@ poetry.lock
 *.swp
 *.swo
 *.tmp
+*.STLbak
+*:Zone.Identifier
 
 # Archives
 *.zip

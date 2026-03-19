@@ -58,6 +58,31 @@ Check out the documentation (currently under docs/build/index.html) for details 
 
 # Helpful info
 
+### Build and use the G7 OpenArm model
+
+This repo includes the `g7_openarm` floating-base mobile manipulator model used by the `g5_openarm` OCS2 integration.
+
+Build the shared library with:
+```
+cd PinnZoo
+mkdir -p build
+cd build
+cmake ..
+cmake --build . --target g7_openarm_quat
+```
+
+The resulting shared library is:
+```
+build/libg7_openarm_quat.so
+```
+
+If you want to use it with the `g5_openarm` launch files in `ethanCSL/ocs2_ros2`, export:
+```
+export PINNZOO_LIBRARY_PATH=<path-to-PinnZoo>/build/libg7_openarm_quat.so
+```
+
+The model source files live under `models/g7_openarm/`.
+
 ### Adding a model
 To add a model, do the following:
 - Create a folder under models with the model name, with the urdf, a generate.py file and a <name>.jl file. Copy models/pendulum for a basic model,

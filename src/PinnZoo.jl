@@ -41,6 +41,7 @@ module PinnZoo
     include(joinpath(MODEL_DIR, "unitree_go2/go2.jl"))
     include(joinpath(MODEL_DIR, "nadia/nadia.jl"))
     include(joinpath(MODEL_DIR, "pineapple/pineapple.jl"))
+    include(joinpath(MODEL_DIR, "g7_openarm/g7_openarm.jl"))
 
     # Defaults for models
     """
@@ -103,5 +104,5 @@ module PinnZoo
     export Quadruped
     export B_func, fix_joint_limits, inverse_kinematics, nearest_ik
 
-    export Pendulum, DoublePendulum, Cartpole, DoubleCartpole, RigidBody, Quadrotor, Go1, Go2, Nadia, Pineapple
+    export Pendulum, DoublePendulum, Cartpole, DoubleCartpole, RigidBody, Quadrotor, Go1, Go2, Nadia, Pineapple, G7OpenArm
 end
